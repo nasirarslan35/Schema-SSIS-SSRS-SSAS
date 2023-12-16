@@ -16,8 +16,8 @@
   DTS:ObjectName="Main"
   DTS:PackageType="5"
   DTS:SaveCheckpoints="True"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{A24E6116-0E65-4E1D-AD94-619377DC5368}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{8CE68F9C-CC48-4D6F-978B-05B305A8C133}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -38,7 +38,6 @@
           DTS:refId="Package\Sequence Container\DimAssetUnit"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DisableEventHandlers="True"
           DTS:DTSID="{504E584A-007F-48C3-8774-FF452A4D5FF8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"

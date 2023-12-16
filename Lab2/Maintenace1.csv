@@ -1,0 +1,11 @@
+AssetNumber,AssetName,AssetUnit,Amount,CountryName,ActivityDate,StateName,MaintenancePersonName
+1006,Production Unit,Weight Scale Machine 100 Ton,3000,UAE,10/9/2022,Ajman,Nasir
+1016,Production Unit2,Pump,2500,US,10/10/2022,NewYork,Jordan
+1020,Production Unit3,Raw Material Feeder,300,Turkey,10/11/2022,Antalya,Arslan
+1022,Production Unit4,Pump,300,Spain,10/12/2022,Barcelona,Shami
+1005,Production Unit5,Weight Scale Machine 100 Ton,100,UAE,10/13/2022,Dubai,Nasir
+1002,Warehouse1,Gasoline Water Pump,800,US,10/14/2022,NewYork,Jordan
+1021,Warehouse2,Fork Lifter,800,Trukey,10/15/2022,Antalya,Adam
+1026,Warehouse3,Fork Lifter,300,Spain,10/16/2022,Valencia,Arslan
+1025,Oxygen Plant1,Motor Repair 75KW,350,US,10/17/2022,NewYork,Jordan
+1024,Oxygen Plant2,Motor Repair 75KW,350,UAE,10/18/2022,Dubai,Nasir

@@ -416,6 +416,9 @@
                       <CellContents>
                         <Textbox Name="textbox5">
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Year.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -786,6 +789,11 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!Year.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Top>0.42in</Top>
             <Height>0.43in</Height>
             <Width>6in</Width>

@@ -16,8 +16,8 @@
   DTS:ObjectName="Main"
   DTS:PackageType="5"
   DTS:SaveCheckpoints="True"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{E0D01316-3ABB-4DA8-A630-9A1C31CB5AB0}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{2DACF078-6E72-4923-A36D-63C5A68877E0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -318,8 +318,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="449.6,256"
-          Size="449.6,299.2"
+          PanelSize="453.6,263.2"
+          Size="453.6,306.4"
           Id="Package\Sequence Container"
           TopLeft="335.871428600318,51.9647058361026" />
       </GraphLayout>

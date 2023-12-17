@@ -27,12 +27,19 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DataSourceSQLServer</DataSourceName>
-        <CommandText>SELECT FactMaintenance.AssetName, FactMaintenance.Amount, FactMaintenance.ActivityDate, DimAssetUnit.AssetUnitName, DimStates.StateName, DimMaintenancePerson.MaintenancePersonName, DimCountry.CountryName
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!Parameter1.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT FactMaintenance.AssetName, FactMaintenance.Amount, FactMaintenance.ActivityDate, DimAssetUnit.AssetUnitName, DimStates.StateName, DimMaintenancePerson.MaintenancePersonName, DimCountry.CountryName, 
+                  DimCountry.CountryID
 FROM     DimAssetUnit INNER JOIN
                   FactMaintenance ON DimAssetUnit.AssetUnitID = FactMaintenance.AssetUnitID_fk INNER JOIN
                   DimCountry ON FactMaintenance.CountryID_fk = DimCountry.CountryID INNER JOIN
                   DimMaintenancePerson ON FactMaintenance.MaintenancePersonID_fk = DimMaintenancePerson.MaintenancePersonID INNER JOIN
-                  DimStates ON FactMaintenance.StateID_fk = DimStates.StateID</CommandText>
+                  DimStates ON FactMaintenance.StateID_fk = DimStates.StateID
+WHERE  (FactMaintenance.StateID_fk = ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="AssetName">
@@ -62,6 +69,49 @@ FROM     DimAssetUnit INNER JOIN
         <Field Name="CountryName">
           <DataField>CountryName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CountryID">
+          <DataField>CountryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="States">
+      <Query>
+        <DataSourceName>DataSourceSQLServer</DataSourceName>
+        <CommandText>SELECT StateID, StateName
+FROM     DimStates</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="StateID">
+          <DataField>StateID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StateName">
+          <DataField>StateName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Country">
+      <Query>
+        <DataSourceName>DataSourceSQLServer</DataSourceName>
+        <CommandText>SELECT CountryID, CountryName, IsActive
+FROM     DimCountry
+WHERE  (IsActive = 1)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CountryID">
+          <DataField>CountryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CountryName">
+          <DataField>CountryName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsActive">
+          <DataField>IsActive</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -378,10 +428,30 @@ FROM     DimAssetUnit INNER JOIN
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Parameter1">
+      <DataType>String</DataType>
+      <Prompt>States</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>States</DataSetName>
+          <ValueField>StateID</ValueField>
+          <LabelField>StateName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Parameter1</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

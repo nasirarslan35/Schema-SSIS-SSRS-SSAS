@@ -50,7 +50,11 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSource Include="DataSourceSQLServer.rds" />
+  </ItemGroup>
+  <ItemGroup>
     <Report Include="Report1.rdl" />
+    <Report Include="ReportSQLServer.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

@@ -1,0 +1,10 @@
+CustName,CustAmount,SalesDate,CountryName,StateName,ProductName,SalesPersonName,MaintenanceCode,DepartmentCode,CountryCode,NIN
+Jhon1,130,1/10/2020,Turkey,Antalya,Sneakers,Nasir,M001,DP1,TUR,N0123
+Frank1,250,2/5/2022,Spain,Barcelona,Tie,Jordan,M002,DP2,ESP,N0124
+Nasir1,4500,1/2/2023,US,NewYork,Jeans,,M003,DP3,USA,N0125
+Jack1,5300,3/8/2022,Trukey,Mulga,Boxer,Shami,M004,DP4,TUR,N0126
+Ella1,7800,5/9/2022,Spain,Valencia,Tie,Nasir,M005,DP5,ESP,N0127
+Toni1,-2,3/12/2024,Turkey,Kayseri,Boxer,,MMER,DP6,TUR,N0128
+Kate1,1550,4/5/2024,US,NewYork,Sneakers,Jordan,M007,DPS,US,N0129
+Arslan1,0,5/7/2024,Turkey,Aydin,Boxer,Shami,MAER,DP8,TUR,N0130
+AB1,850,5/11/2023,US,NewYork,Sneakers,Nasir,M009,DP9,USA,N0131

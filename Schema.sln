@@ -9,6 +9,11 @@ Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SsasSchema", "SsasSchema\Ss
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SsrsSchema", "SsrsSchema\SsrsSchema.rptproj", "{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProfile", "DataProfile", "{C0DAB5F9-A426-4AF6-BAF8-6AC79F06E84E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\OneDrive\Desktop\COURSES\MSBI\lab4\Profilling Data.csv = ..\..\..\OneDrive\Desktop\COURSES\MSBI\lab4\Profilling Data.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default

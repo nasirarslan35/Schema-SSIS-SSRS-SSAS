@@ -30,6 +30,7 @@
         <QueryParameters>
           <QueryParameter Name="?">
             <Value>=Parameters!Parameter1.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT FactMaintenance.AssetName, FactMaintenance.Amount, FactMaintenance.ActivityDate, DimAssetUnit.AssetUnitName, DimStates.StateName, DimMaintenancePerson.MaintenancePersonName, DimCountry.CountryName, 
@@ -79,8 +80,16 @@ WHERE  (FactMaintenance.StateID_fk = ?)</CommandText>
     <DataSet Name="States">
       <Query>
         <DataSourceName>DataSourceSQLServer</DataSourceName>
-        <CommandText>SELECT StateID, StateName
-FROM     DimStates</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!Country.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT DimStates.StateID, DimStates.StateName, DimStates.ContryID_fk, DimCountry.CountryID
+FROM     DimStates INNER JOIN
+                  DimCountry ON DimStates.ContryID_fk = DimCountry.CountryID
+where (contryID_fk = ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="StateID">
@@ -90,6 +99,14 @@ FROM     DimStates</CommandText>
         <Field Name="StateName">
           <DataField>StateName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContryID_fk">
+          <DataField>ContryID_fk</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CountryID">
+          <DataField>CountryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -429,6 +446,17 @@ WHERE  (IsActive = 1)</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="Country">
+      <DataType>String</DataType>
+      <Prompt>CountryName</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Country</DataSetName>
+          <ValueField>CountryID</ValueField>
+          <LabelField>CountryName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
     <ReportParameter Name="Parameter1">
       <DataType>String</DataType>
       <Prompt>States</Prompt>
@@ -447,9 +475,14 @@ WHERE  (IsActive = 1)</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Parameter1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Country</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

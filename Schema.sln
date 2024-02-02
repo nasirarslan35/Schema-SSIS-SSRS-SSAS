@@ -5,8 +5,6 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SsisSchema", "Schema\SsisSchema.dtproj", "{48F2FB0E-D81F-46A8-8980-4DED487C1B6D}"
 EndProject
-Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SsasSchema", "SsasSchema\SsasSchema.dwproj", "{3A50F57A-4DF2-4D99-B361-79A4FE974802}"
-EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SsrsSchema", "SsrsSchema\SsrsSchema.rptproj", "{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProfile", "DataProfile", "{C0DAB5F9-A426-4AF6-BAF8-6AC79F06E84E}"
@@ -14,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProfile", "DataProfile"
 		..\..\..\OneDrive\Desktop\COURSES\MSBI\lab4\Profilling Data.csv = ..\..\..\OneDrive\Desktop\COURSES\MSBI\lab4\Profilling Data.csv
 	EndProjectSection
 EndProject
-Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "checking", "checking\checking.dwproj", "{F4D5A45C-B5AF-4123-8002-675C4B6A1318}"
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SsasSchema1", "SsasSchema1\SsasSchema1.dwproj", "{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,18 +30,6 @@ Global
 		{48F2FB0E-D81F-46A8-8980-4DED487C1B6D}.Development|Default.Build.0 = Development
 		{48F2FB0E-D81F-46A8-8980-4DED487C1B6D}.Release|Default.ActiveCfg = Development
 		{48F2FB0E-D81F-46A8-8980-4DED487C1B6D}.Release|Default.Build.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Debug|Default.ActiveCfg = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Debug|Default.Build.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Debug|Default.Deploy.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.DebugLocal|Default.ActiveCfg = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.DebugLocal|Default.Build.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.DebugLocal|Default.Deploy.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Development|Default.ActiveCfg = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Development|Default.Build.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Development|Default.Deploy.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Release|Default.ActiveCfg = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Release|Default.Build.0 = Development
-		{3A50F57A-4DF2-4D99-B361-79A4FE974802}.Release|Default.Deploy.0 = Development
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Debug|Default.ActiveCfg = Debug
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Debug|Default.Build.0 = Debug
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Debug|Default.Deploy.0 = Debug
@@ -54,18 +40,18 @@ Global
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Release|Default.ActiveCfg = Release
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Release|Default.Build.0 = Release
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Release|Default.Deploy.0 = Release
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Debug|Default.ActiveCfg = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Debug|Default.Build.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Debug|Default.Deploy.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.DebugLocal|Default.ActiveCfg = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.DebugLocal|Default.Build.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.DebugLocal|Default.Deploy.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Development|Default.ActiveCfg = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Development|Default.Build.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Development|Default.Deploy.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Release|Default.ActiveCfg = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Release|Default.Build.0 = Development
-		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Release|Default.Deploy.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Debug|Default.ActiveCfg = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Debug|Default.Build.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Debug|Default.Deploy.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.DebugLocal|Default.ActiveCfg = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.DebugLocal|Default.Build.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.DebugLocal|Default.Deploy.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Development|Default.ActiveCfg = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Development|Default.Build.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Development|Default.Deploy.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Release|Default.ActiveCfg = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Release|Default.Build.0 = Development
+		{F33EB82B-1CD9-4FCC-A221-4CA74E16D164}.Release|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

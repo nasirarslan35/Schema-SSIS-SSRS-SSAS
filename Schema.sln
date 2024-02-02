@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProfile", "DataProfile"
 		..\..\..\OneDrive\Desktop\COURSES\MSBI\lab4\Profilling Data.csv = ..\..\..\OneDrive\Desktop\COURSES\MSBI\lab4\Profilling Data.csv
 	EndProjectSection
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "checking", "checking\checking.dwproj", "{F4D5A45C-B5AF-4123-8002-675C4B6A1318}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -52,6 +54,18 @@ Global
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Release|Default.ActiveCfg = Release
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Release|Default.Build.0 = Release
 		{5CC2BEE8-AF36-411A-AF61-0658E65EA4F6}.Release|Default.Deploy.0 = Release
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Debug|Default.ActiveCfg = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Debug|Default.Build.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Debug|Default.Deploy.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.DebugLocal|Default.ActiveCfg = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.DebugLocal|Default.Build.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.DebugLocal|Default.Deploy.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Development|Default.ActiveCfg = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Development|Default.Build.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Development|Default.Deploy.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Release|Default.ActiveCfg = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Release|Default.Build.0 = Development
+		{F4D5A45C-B5AF-4123-8002-675C4B6A1318}.Release|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

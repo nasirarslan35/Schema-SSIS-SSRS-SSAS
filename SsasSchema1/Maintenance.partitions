@@ -1,19 +1,38 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fb69b21f-7a83-44f8-be74-22dd9d1daa94" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="85fcc818-4972-4326-a462-de395b075c92" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Maintenance</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Fact Maintenance</ID>
       <Partitions>
-        <Partition dwd:design-time-name="d136ee21-0ecb-415a-af0b-bf59e27cc30b">
+        <Partition dwd:design-time-name="d48111e9-eae2-4651-af25-e65beafe1677">
           <ID>Fact Maintenance</ID>
-          <Name>Fact Maintenance</Name>
+          <Name>Greaterthan2016</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8be28c8c-a9d9-4d03-8d97-f3d0fc9676ad">
-            <DataSourceViewID>Maintenance</DataSourceViewID>
-            <TableID>dbo_FactMaintenance</TableID>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8751c88c-1a2b-4b8f-a2ce-42142da51de5">
+            <DataSourceID>Maintenance</DataSourceID>
+            <QueryDefinition>SELECT [dbo].[FactMaintenance].[AsstNumber],[dbo].[FactMaintenance].[AssetName],[dbo].[FactMaintenance].[AssetUnitID_fk],[dbo].[FactMaintenance].[Amount],[dbo].[FactMaintenance].[CountryID_fk],[dbo].[FactMaintenance].[ActivityDate],[dbo].[FactMaintenance].[StateID_fk],[dbo].[FactMaintenance].[MaintenancePersonID_fk],[dbo].[FactMaintenance].[MaintenanceOverheadCost]
+  FROM [dbo].[FactMaintenance]
+		WHERE Year(ActivityDate) &gt; 2016</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="47ed963c-34a7-469d-a142-c763e3485fa5">
+          <ID>Fact Maintenance 1</ID>
+          <Name>LessOREqual to 2016</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="9aedd40c-5a74-4059-b850-6f0416d927f1">
+            <DataSourceID>Maintenance</DataSourceID>
+            <QueryDefinition>SELECT [dbo].[FactMaintenance].[AsstNumber],[dbo].[FactMaintenance].[AssetName],[dbo].[FactMaintenance].[AssetUnitID_fk],[dbo].[FactMaintenance].[Amount],[dbo].[FactMaintenance].[CountryID_fk],[dbo].[FactMaintenance].[ActivityDate],[dbo].[FactMaintenance].[StateID_fk],[dbo].[FactMaintenance].[MaintenancePersonID_fk],[dbo].[FactMaintenance].[MaintenanceOverheadCost]
+  FROM [dbo].[FactMaintenance]
+		WHERE Year(ActivityDate) &lt;= 2016</QueryDefinition>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>

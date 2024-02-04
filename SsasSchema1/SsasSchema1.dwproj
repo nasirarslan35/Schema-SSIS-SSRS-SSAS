@@ -39,6 +39,10 @@
       <Name>DimDate.dim</Name>
       <FullPath>DimDate.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Continent.dim</Name>
+      <FullPath>Dim Continent.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

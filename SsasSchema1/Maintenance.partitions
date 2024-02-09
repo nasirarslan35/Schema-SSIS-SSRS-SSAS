@@ -1,44 +1,381 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="85fcc818-4972-4326-a462-de395b075c92" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6d62c171-0933-49dd-8988-a17876982647" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Maintenance</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Fact Maintenance</ID>
       <Partitions>
-        <Partition dwd:design-time-name="d48111e9-eae2-4651-af25-e65beafe1677">
+        <Partition dwd:design-time-name="3fc9d191-7024-4d24-9db3-cc8aee99d891">
           <ID>Fact Maintenance</ID>
-          <Name>Greaterthan2016</Name>
+          <Name>Fact Maintenance</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="8751c88c-1a2b-4b8f-a2ce-42142da51de5">
-            <DataSourceID>Maintenance</DataSourceID>
-            <QueryDefinition>SELECT [dbo].[FactMaintenance].[AsstNumber],[dbo].[FactMaintenance].[AssetName],[dbo].[FactMaintenance].[AssetUnitID_fk],[dbo].[FactMaintenance].[Amount],[dbo].[FactMaintenance].[CountryID_fk],[dbo].[FactMaintenance].[ActivityDate],[dbo].[FactMaintenance].[StateID_fk],[dbo].[FactMaintenance].[MaintenancePersonID_fk],[dbo].[FactMaintenance].[MaintenanceOverheadCost]
-  FROM [dbo].[FactMaintenance]
-		WHERE Year(ActivityDate) &gt; 2016</QueryDefinition>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9965326f-004e-4d01-910d-6b9102a50819">
+            <DataSourceViewID>Maintenance</DataSourceViewID>
+            <TableID>dbo_FactMaintenance</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
-        </Partition>
-        <Partition dwd:design-time-name="47ed963c-34a7-469d-a142-c763e3485fa5">
-          <ID>Fact Maintenance 1</ID>
-          <Name>LessOREqual to 2016</Name>
-          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-          <State>Unprocessed</State>
-          <Source xsi:type="QueryBinding" dwd:design-time-name="9aedd40c-5a74-4059-b850-6f0416d927f1">
-            <DataSourceID>Maintenance</DataSourceID>
-            <QueryDefinition>SELECT [dbo].[FactMaintenance].[AsstNumber],[dbo].[FactMaintenance].[AssetName],[dbo].[FactMaintenance].[AssetUnitID_fk],[dbo].[FactMaintenance].[Amount],[dbo].[FactMaintenance].[CountryID_fk],[dbo].[FactMaintenance].[ActivityDate],[dbo].[FactMaintenance].[StateID_fk],[dbo].[FactMaintenance].[MaintenancePersonID_fk],[dbo].[FactMaintenance].[MaintenanceOverheadCost]
-  FROM [dbo].[FactMaintenance]
-		WHERE Year(ActivityDate) &lt;= 2016</QueryDefinition>
-          </Source>
-          <StorageMode>Molap</StorageMode>
-          <CurrentStorageMode>Molap</CurrentStorageMode>
-          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>10</EstimatedRows>
+          <AggregationDesignID>AggregationDesign 1</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-02-09T19:35:39.123333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-02-09T19:35:39.123333Z</LastSchemaUpdate>
+          <EstimatedRows>10</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim States</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>State ID</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>State Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Asset Unit</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Asset Unit ID</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Asset Unit Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Maintenance Person</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Maintenance Person ID</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Maintenance Person Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Country</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Country ID</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Country Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Continent ID</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>DimDate</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                  <EstimatedCount>9132</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>25</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter</AttributeID>
+                  <EstimatedCount>100</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>300</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week</AttributeID>
+                  <EstimatedCount>1326</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter Of Year</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Continent</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Continent ID</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Continent Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim States</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Asset Unit</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Maintenance Person</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Country</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DimDate</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Continent</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Continent ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim States</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Asset Unit</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Maintenance Person</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Country</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DimDate</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Continent</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+        <AggregationDesign>
+          <ID>AggregationDesign 1</ID>
+          <Name>AggregationDesign 1</Name>
+          <CreatedTimestamp>2024-02-09T19:40:19.783333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-02-09T19:40:19.783333Z</LastSchemaUpdate>
+          <EstimatedRows>10</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim States</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>State ID</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>State Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Asset Unit</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Asset Unit ID</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Asset Unit Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Maintenance Person</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Maintenance Person ID</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Maintenance Person Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Country</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Country ID</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Country Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Continent ID</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>DimDate</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                  <EstimatedCount>9132</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>25</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter</AttributeID>
+                  <EstimatedCount>100</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>300</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week</AttributeID>
+                  <EstimatedCount>1326</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter Of Year</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Continent</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Continent ID</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Continent Name</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim States</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Asset Unit</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Maintenance Person</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Country</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DimDate</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Continent</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Continent ID</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim States</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Asset Unit</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Maintenance Person</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Country</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>DimDate</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Continent</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
   </MeasureGroups>
 </Cube>

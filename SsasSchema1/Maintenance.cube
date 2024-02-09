@@ -375,6 +375,43 @@
       </Attributes>
     </Dimension>
   </Dimensions>
+  <Perspectives>
+    <Perspective dwd:design-time-name="064f009c-4999-42b6-81ad-66d73181e612">
+      <ID>Perspective</ID>
+      <Name>GM</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Dimensions>
+        <Dimension dwd:design-time-name="7843fe24-017e-4350-b025-e30691db4123">
+          <CubeDimensionID>Dim Country</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="cf1f5e47-62bd-4b8a-bdaa-661d1ea6effd">
+              <AttributeID>Country ID</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="768a2623-8f36-49c0-9687-22368c555c90">
+              <AttributeID>Country Name</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="1b9001dd-023d-4c8e-8654-517e830e879b">
+              <AttributeID>Continent ID</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <MeasureGroups>
+        <MeasureGroup dwd:design-time-name="e917fd6a-cdf4-408d-acb9-a79d43940a83">
+          <MeasureGroupID>Fact Maintenance</MeasureGroupID>
+          <Measures>
+            <Measure dwd:design-time-name="467bb0a6-f5f9-408c-a5fa-30834f289dd8">
+              <MeasureID>Amount</MeasureID>
+            </Measure>
+            <Measure dwd:design-time-name="555edb84-2340-4f86-891c-71d326bc14bf">
+              <MeasureID>Maintenance Overhead Cost</MeasureID>
+            </Measure>
+          </Measures>
+        </MeasureGroup>
+      </MeasureGroups>
+    </Perspective>
+  </Perspectives>
   <MeasureGroups>
     <MeasureGroup dwd:design-time-name="3002da2d-ef98-49cb-a7e5-638c85c2f070">
       <ID>Fact Maintenance</ID>

@@ -294,6 +294,12 @@
     <Dimension dwd:design-time-name="fafbe8e3-070d-4976-8ba8-2f5af7216488">
       <ID>Dim Country</ID>
       <Name>Dim Country</Name>
+      <Translations>
+        <Translation dwd:design-time-name="001b3557-56d2-4852-8f6a-37d26b7310e8">
+          <Language>2080</Language>
+          <Caption>Mulk</Caption>
+        </Translation>
+      </Translations>
       <DimensionID>Dim Country</DimensionID>
       <Attributes>
         <Attribute dwd:design-time-name="724a2f8a-6d73-4ee0-a600-f10ee9602820">
@@ -310,6 +316,12 @@
     <Dimension dwd:design-time-name="e32811b6-cbdf-48e2-8b75-89dfd2df7fd8">
       <ID>DimDate</ID>
       <Name>DimDate</Name>
+      <Translations>
+        <Translation dwd:design-time-name="fb7694b9-be77-4af9-af77-b5601643f6e6">
+          <Language>2080</Language>
+          <Caption>Waqat</Caption>
+        </Translation>
+      </Translations>
       <DimensionID>DimDate</DimensionID>
       <Attributes>
         <Attribute dwd:design-time-name="f7ac2e48-d0f0-4780-8612-8bf25fc291d7">
@@ -431,6 +443,12 @@
               <ColumnID>Amount</ColumnID>
             </Source>
           </Source>
+          <Translations>
+            <Translation dwd:design-time-name="961a8e43-ebc4-42e8-b80e-0ccbbf434284">
+              <Language>2080</Language>
+              <Caption>Paisa</Caption>
+            </Translation>
+          </Translations>
         </Measure>
         <Measure dwd:design-time-name="8ec91c35-4fb9-4f67-abfe-fc32c42ff227">
           <ID>Fact Maintenance Count</ID>

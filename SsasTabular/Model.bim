@@ -1,0 +1,511 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/Nasir;Maintenance",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "Nasir",
+            "database": "Maintenance"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "nasir;Maintenance",
+          "Username": "Nasir",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimAssetUnit",
+        "columns": [
+          {
+            "name": "AssetUnitID",
+            "dataType": "int64",
+            "sourceColumn": "AssetUnitID"
+          },
+          {
+            "name": "AssetUnitName",
+            "dataType": "string",
+            "sourceColumn": "AssetUnitName"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_DimAssetUnit = Source{[Schema=\"dbo\",Item=\"DimAssetUnit\"]}[Data],",
+                "    #\"Removed Duplicates\" = Table.Distinct(dbo_DimAssetUnit, {\"AssetUnitID\"})",
+                "in",
+                "    #\"Removed Duplicates\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimContinent",
+        "columns": [
+          {
+            "name": "ContinentID",
+            "dataType": "int64",
+            "sourceColumn": "ContinentID"
+          },
+          {
+            "name": "ContinentName",
+            "dataType": "string",
+            "sourceColumn": "ContinentName"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_DimContinent = Source{[Schema=\"dbo\",Item=\"DimContinent\"]}[Data]",
+                "in",
+                "    dbo_DimContinent"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimCountry",
+        "columns": [
+          {
+            "name": "CountryID",
+            "dataType": "int64",
+            "sourceColumn": "CountryID"
+          },
+          {
+            "name": "CountryName",
+            "dataType": "string",
+            "sourceColumn": "CountryName"
+          },
+          {
+            "name": "IsActive",
+            "dataType": "boolean",
+            "sourceColumn": "IsActive"
+          },
+          {
+            "name": "ContinentID",
+            "dataType": "int64",
+            "sourceColumn": "ContinentID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_DimCountry = Source{[Schema=\"dbo\",Item=\"DimCountry\"]}[Data],",
+                "    #\"Removed Duplicates\" = Table.Distinct(dbo_DimCountry, {\"CountryID\"})",
+                "in",
+                "    #\"Removed Duplicates\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "PK_Date",
+            "dataType": "dateTime",
+            "sourceColumn": "PK_Date"
+          },
+          {
+            "name": "Date_Name",
+            "dataType": "string",
+            "sourceColumn": "Date_Name"
+          },
+          {
+            "name": "Year",
+            "dataType": "dateTime",
+            "sourceColumn": "Year"
+          },
+          {
+            "name": "Year_Name",
+            "dataType": "string",
+            "sourceColumn": "Year_Name"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "dateTime",
+            "sourceColumn": "Quarter"
+          },
+          {
+            "name": "Quarter_Name",
+            "dataType": "string",
+            "sourceColumn": "Quarter_Name"
+          },
+          {
+            "name": "Month",
+            "dataType": "dateTime",
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "Month_Name",
+            "dataType": "string",
+            "sourceColumn": "Month_Name"
+          },
+          {
+            "name": "Week",
+            "dataType": "dateTime",
+            "sourceColumn": "Week"
+          },
+          {
+            "name": "Week_Name",
+            "dataType": "string",
+            "sourceColumn": "Week_Name"
+          },
+          {
+            "name": "Day_Of_Year",
+            "dataType": "int64",
+            "sourceColumn": "Day_Of_Year"
+          },
+          {
+            "name": "Day_Of_Year_Name",
+            "dataType": "string",
+            "sourceColumn": "Day_Of_Year_Name"
+          },
+          {
+            "name": "Day_Of_Quarter",
+            "dataType": "int64",
+            "sourceColumn": "Day_Of_Quarter"
+          },
+          {
+            "name": "Day_Of_Quarter_Name",
+            "dataType": "string",
+            "sourceColumn": "Day_Of_Quarter_Name"
+          },
+          {
+            "name": "Day_Of_Month",
+            "dataType": "int64",
+            "sourceColumn": "Day_Of_Month"
+          },
+          {
+            "name": "Day_Of_Month_Name",
+            "dataType": "string",
+            "sourceColumn": "Day_Of_Month_Name"
+          },
+          {
+            "name": "Day_Of_Week",
+            "dataType": "int64",
+            "sourceColumn": "Day_Of_Week"
+          },
+          {
+            "name": "Day_Of_Week_Name",
+            "dataType": "string",
+            "sourceColumn": "Day_Of_Week_Name"
+          },
+          {
+            "name": "Week_Of_Year",
+            "dataType": "int64",
+            "sourceColumn": "Week_Of_Year"
+          },
+          {
+            "name": "Week_Of_Year_Name",
+            "dataType": "string",
+            "sourceColumn": "Week_Of_Year_Name"
+          },
+          {
+            "name": "Month_Of_Year",
+            "dataType": "int64",
+            "sourceColumn": "Month_Of_Year"
+          },
+          {
+            "name": "Month_Of_Year_Name",
+            "dataType": "string",
+            "sourceColumn": "Month_Of_Year_Name"
+          },
+          {
+            "name": "Month_Of_Quarter",
+            "dataType": "int64",
+            "sourceColumn": "Month_Of_Quarter"
+          },
+          {
+            "name": "Month_Of_Quarter_Name",
+            "dataType": "string",
+            "sourceColumn": "Month_Of_Quarter_Name"
+          },
+          {
+            "name": "Quarter_Of_Year",
+            "dataType": "int64",
+            "sourceColumn": "Quarter_Of_Year"
+          },
+          {
+            "name": "Quarter_Of_Year_Name",
+            "dataType": "string",
+            "sourceColumn": "Quarter_Of_Year_Name"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_DimDate = Source{[Schema=\"dbo\",Item=\"DimDate\"]}[Data]",
+                "in",
+                "    dbo_DimDate"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimMaintenancePerson",
+        "columns": [
+          {
+            "name": "MaintenancePersonID",
+            "dataType": "int64",
+            "sourceColumn": "MaintenancePersonID"
+          },
+          {
+            "name": "MaintenancePersonName",
+            "dataType": "string",
+            "sourceColumn": "MaintenancePersonName"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_DimMaintenancePerson = Source{[Schema=\"dbo\",Item=\"DimMaintenancePerson\"]}[Data],",
+                "    #\"Removed Duplicates\" = Table.Distinct(dbo_DimMaintenancePerson, {\"MaintenancePersonID\"})",
+                "in",
+                "    #\"Removed Duplicates\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimStates",
+        "columns": [
+          {
+            "name": "StateID",
+            "dataType": "int64",
+            "sourceColumn": "StateID"
+          },
+          {
+            "name": "StateName",
+            "dataType": "string",
+            "sourceColumn": "StateName"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          },
+          {
+            "name": "ContryID_fk",
+            "dataType": "int64",
+            "sourceColumn": "ContryID_fk"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_DimStates = Source{[Schema=\"dbo\",Item=\"DimStates\"]}[Data]",
+                "in",
+                "    dbo_DimStates"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactMaintenance",
+        "columns": [
+          {
+            "name": "AsstNumber",
+            "dataType": "int64",
+            "sourceColumn": "AsstNumber"
+          },
+          {
+            "name": "AssetName",
+            "dataType": "string",
+            "sourceColumn": "AssetName"
+          },
+          {
+            "name": "AssetUnitID_fk",
+            "dataType": "int64",
+            "sourceColumn": "AssetUnitID_fk"
+          },
+          {
+            "name": "Amount",
+            "dataType": "decimal",
+            "sourceColumn": "Amount"
+          },
+          {
+            "name": "CountryID_fk",
+            "dataType": "int64",
+            "sourceColumn": "CountryID_fk"
+          },
+          {
+            "name": "ActivityDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ActivityDate"
+          },
+          {
+            "name": "StateID_fk",
+            "dataType": "int64",
+            "sourceColumn": "StateID_fk"
+          },
+          {
+            "name": "MaintenancePersonID_fk",
+            "dataType": "int64",
+            "sourceColumn": "MaintenancePersonID_fk"
+          },
+          {
+            "name": "MaintenanceOverheadCost",
+            "dataType": "decimal",
+            "sourceColumn": "MaintenanceOverheadCost"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/Nasir;Maintenance\",",
+                "    dbo_FactMaintenance = Source{[Schema=\"dbo\",Item=\"FactMaintenance\"]}[Data]",
+                "in",
+                "    dbo_FactMaintenance"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "MaintOverheadCostSum",
+            "expression": "sum(FactMaintenance[MaintenanceOverheadCost])"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "af2851cb-dd96-4489-abf6-67f1428187fa",
+        "fromTable": "FactMaintenance",
+        "fromColumn": "AssetUnitID_fk",
+        "toTable": "DimAssetUnit",
+        "toColumn": "AssetUnitID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "4237e7ae-bf1d-48cd-acb0-021cae4a53c0",
+        "fromTable": "DimCountry",
+        "fromColumn": "ContinentID",
+        "toTable": "DimContinent",
+        "toColumn": "ContinentID"
+      },
+      {
+        "name": "94caeeed-22c6-4e33-8ffd-d30343596034",
+        "fromTable": "FactMaintenance",
+        "fromColumn": "CountryID_fk",
+        "toTable": "DimCountry",
+        "toColumn": "CountryID"
+      },
+      {
+        "name": "8539acd3-413b-4d8e-aee4-963e59d956e0",
+        "fromCardinality": "one",
+        "fromTable": "DimDate",
+        "fromColumn": "PK_Date",
+        "toTable": "FactMaintenance",
+        "toColumn": "ActivityDate",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "4befe13a-1645-46bb-995c-0013a5776734",
+        "fromTable": "FactMaintenance",
+        "fromColumn": "StateID_fk",
+        "toTable": "DimStates",
+        "toColumn": "StateID"
+      },
+      {
+        "name": "d9cbe478-4ea7-43c9-ab96-ffdbc9f3247d",
+        "fromTable": "FactMaintenance",
+        "fromColumn": "MaintenancePersonID_fk",
+        "toTable": "DimMaintenancePerson",
+        "toColumn": "MaintenancePersonID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

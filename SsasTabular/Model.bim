@@ -448,7 +448,54 @@
         "measures": [
           {
             "name": "MaintOverheadCostSum",
-            "expression": "sum(FactMaintenance[MaintenanceOverheadCost])"
+            "expression": "sum(FactMaintenance[MaintenanceOverheadCost])",
+            "kpi": {
+              "targetExpression": "700",
+              "statusGraphic": "Traffic Light - Single",
+              "statusExpression": [
+                "var x='FactMaintenance'[MaintOverheadCostSum] return",
+                "            if(ISBLANK(x),BLANK(),",
+                "                    If(x<574,1,",
+                "\t                If(x<700,0,-1)",
+                "                )",
+                "            )",
+                "            "
+              ],
+              "annotations": [
+                {
+                  "name": "GoalType",
+                  "value": "StaticValue"
+                },
+                {
+                  "name": "KpiStatusType",
+                  "value": "LinearReversed"
+                },
+                {
+                  "name": "KpiThresholdType",
+                  "value": "Absolute"
+                },
+                {
+                  "name": "KpiThresholdOrdering",
+                  "value": "Ascending"
+                },
+                {
+                  "name": "KpiThresholdCount",
+                  "value": "2"
+                },
+                {
+                  "name": "KpiThreshold_0",
+                  "value": "574"
+                },
+                {
+                  "name": "KpiThreshold_1",
+                  "value": "700"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Measure 1",
+            "expression": "sum(FactMaintenance[Amount])"
           }
         ]
       }
@@ -498,6 +545,70 @@
         "fromColumn": "MaintenancePersonID_fk",
         "toTable": "DimMaintenancePerson",
         "toColumn": "MaintenancePersonID"
+      }
+    ],
+    "perspectives": [
+      {
+        "name": "New Perspective",
+        "tables": [
+          {
+            "name": "DimCountry",
+            "columns": [
+              {
+                "name": "ContinentID"
+              },
+              {
+                "name": "CountryID"
+              },
+              {
+                "name": "CountryName"
+              },
+              {
+                "name": "IsActive"
+              }
+            ]
+          },
+          {
+            "name": "FactMaintenance",
+            "columns": [
+              {
+                "name": "ActivityDate"
+              },
+              {
+                "name": "Amount"
+              },
+              {
+                "name": "AssetName"
+              },
+              {
+                "name": "AssetUnitID_fk"
+              },
+              {
+                "name": "AsstNumber"
+              },
+              {
+                "name": "CountryID_fk"
+              },
+              {
+                "name": "MaintenanceOverheadCost"
+              },
+              {
+                "name": "MaintenancePersonID_fk"
+              },
+              {
+                "name": "StateID_fk"
+              }
+            ],
+            "measures": [
+              {
+                "name": "Measure 1"
+              },
+              {
+                "name": "MaintOverheadCostSum"
+              }
+            ]
+          }
+        ]
       }
     ],
     "annotations": [

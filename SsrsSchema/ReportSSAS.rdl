@@ -7,9 +7,9 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.8.34330.188</am:Version>
+      <am:Version>17.9.34607.119</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-12-17T11:31:15.4427899Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-02-19T19:26:36.2200940Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -17,7 +17,7 @@
     <DataSource Name="SchemaAnalysisServerCube">
       <ConnectionProperties>
         <DataProvider>OLEDB-MD</DataProvider>
-        <ConnectString>Data Source=NASIR;Initial Catalog=SsasSchema</ConnectString>
+        <ConnectString>Data Source=NASIR;Initial Catalog=SsasSchema1</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>

@@ -53,6 +53,7 @@
     <DataSource Include="DataSourceSQLServer.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Dashboard.rdl" />
     <Report Include="DrillDown.rdl" />
     <Report Include="ReportSQLServer.rdl" />
     <Report Include="ReportSSAS.rdl" />
